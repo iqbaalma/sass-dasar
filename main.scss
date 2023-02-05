@@ -1,0 +1,240 @@
+$light-color: white;
+$dark-color: black;
+$lime-color: lime;
+$blue-color: blue;
+$font-stack: 'Poppins', sans-serif;
+
+body{
+    font:100% $font-stack;
+    margin: 0;
+}
+.navbar {
+    background-color: $light-color;
+    overflow: hidden;
+    a {
+        color: $dark-color;
+        float: left;
+        display: block;
+        text-align: center;
+        padding: 10px 20px;
+        text-decoration: none;
+    }
+    img {
+        width: 150px;
+    }
+    a:hover {
+        background-color: $blue-color;
+        color: $light-color;
+        padding: 10px 20px;
+    }
+    .right {
+        float: right;
+        width: auto;
+        display: block;
+        padding: 5px;
+    }
+}
+@media screen and (max-width:800px){
+    .navbar {
+        a {
+            float: none;
+            width: 100%;
+        }
+        .right {
+            float: none;
+            width: 100%;
+        }
+    }
+}
+.header {
+    background-image: url("https://wallpapercave.com/wp/wp8268600.jpg");
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-top: 1px solid $dark-color;
+    border-bottom: 1px solid $dark-color;
+}
+.text-header {
+    text-align: center;
+    padding: 30px;
+
+    hr {
+        margin: auto;
+        width: 400px;
+        border-color: $dark-color;
+        margin-bottom: 10px;
+    }
+    p {
+        color: $dark-color;
+        font-size: 20px;
+        margin-bottom: 50px;
+    }
+}
+@mixin judul($color,$shadow) {
+        color: $color;
+        text-shadow: 1px 1px $shadow;
+        font-size: 35px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+}
+.judul-header {
+    @include judul($dark-color,$light-color)
+}
+.judul-product {
+    @include judul($dark-color,$light-color)
+}
+.button-basic {
+    border: none;
+    padding: 15px 15px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    color: $light-color;
+    font-family: 'Poppins';
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+.button-primary {
+    @extend.button-basic;
+    background-color: $lime-color;
+    color: $dark-color;
+}
+.button-secondary {
+    @extend.button-basic;
+    background-color: $dark-color;
+}
+.grid-container {
+    box-sizing: border-box;
+}
+@mixin item($value) {
+    width: $value;
+    float: left;
+    @media screen and (max-width:800px){
+        float: none;
+        width: 100%;
+    }
+}
+.item-sepertiga {
+    @include item(33%);
+}
+.item-duapertiga {
+    @include item(66%);
+}
+.about {
+    background-color: $dark-color;
+    min-height: 400px;
+    @media screen and(max-width:800px) {
+        text-align: center;
+        padding: 20px;
+    }
+    img {
+        border-radius: 20%;
+        padding: 20px;
+        width: 400px;
+    }
+    h1 {
+        color: $lime-color;
+        text-shadow: 1px 1px $dark-color;
+        font-size: 46px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    h2 {
+        color: $light-color;
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+    p {
+        color: $light-color;
+        font-size: 20px;
+    }
+}
+.product {
+    background-color: $lime-color;
+}
+.image-style {
+    border-radius: 25px;
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.product-body {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    @media screen and (max-width:800px) {
+        flex-direction: column;
+    }
+    .product-item {
+        background-color: $light-color;
+        color: $dark-color;
+        box-shadow: 0 4px 8px 0 $lime-color;
+        margin: 16px;
+        border-radius: 10px;
+        width: 340px;
+
+        img {
+            width: 90%;
+            @extend .image-style
+        }
+        .product-content {
+            padding: 20px;
+            text-align: justify;
+        }
+        .product-footer {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        @media screen and (max-width:800px) {
+            width: 100%;
+        }
+    }
+}
+.contact {
+    background-image: url("https://i.pinimg.com/originals/de/ae/e1/deaee18da2f154495f07ff390dad88d6.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 50px;
+    .info {
+        width: 50%;
+        @media screen and(max-width:800px) {
+            width: 75%;
+        }
+        background-color: $light-color;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        text-align: justify;
+        border-radius: 10px;
+        i {
+            color: $blue-color;
+            font-size: 30px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: $dark-color;
+            font-size: 35px;
+        }
+    }
+}
+.footer {
+    background-color: $dark-color;
+    color: $light-color;
+}
+.footer-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
